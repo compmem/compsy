@@ -1,6 +1,6 @@
 # COMPSY
 
-This repository contains the content for the course, an *Computational
+This repository contains the content for the course *Computational
 Methods in Psychology and Neuroscience*. 
 
 You can find the syllabus [here](syllabus/syllabus.pdf). 
