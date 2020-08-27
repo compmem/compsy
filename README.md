@@ -5,4 +5,4 @@ Methods in Psychology and Neuroscience*.
 
 You can find the syllabus [here](syllabus/syllabus.pdf). 
 
-The [lessons](lessons) folder contains Jypyter notebooks for each lesson.
+The [lessons](lessons) folder contains Jupyter notebooks for each lesson.
