@@ -1,9 +1,9 @@
 ---
 title: 'Computational Methods in Psychology and Neuroscience'
-subtitle: 'Psychology 4500 --- Fall 2020'
+subtitle: 'Psychology 4500/7500 --- Fall 2020'
 author: Per B. Sederberg, PhD
 documentclass: scrartcl
-date: Version 2020-08-25
+date: Version 2020-08-27
 header-includes:
     - \usepackage{array,hyperref}
     - \usepackage[letterpaper, margin=1in]{geometry}
@@ -123,7 +123,16 @@ This is a upper-level course, which means that much of the burden of staying mot
 - Experiment project (20 pts)
 - Data Analysis project (30 pts)
 
-for a total of 100 points. The course will be graded using the standard grading scale.
+for a total of 100 points. 
+
+Graduate students will have the following additional course requirements:
+
+- Experiment motivation and design document (20 pts)
+- Final write-up with results and discussion (30 pts)
+
+for a total of 50 additional points.
+
+The course will be graded using the standard grading scale with your percentage of points earned out of the total possible points rounding to the nearest whole percentage point.
 
 
 
