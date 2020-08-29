@@ -1,6 +1,6 @@
 ---
 title: 'Computational Methods in Psychology and Neuroscience'
-subtitle: 'Psychology 4500/7500 --- Fall 2020'
+subtitle: 'Psychology 4500/7559 --- Fall 2020'
 author: Per B. Sederberg, PhD
 documentclass: scrartcl
 date: Version 2020-08-27
