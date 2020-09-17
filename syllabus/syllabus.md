@@ -3,7 +3,7 @@ title: 'Computational Methods in Psychology and Neuroscience'
 subtitle: 'Psychology 4500/7559 --- Fall 2020'
 author: Per B. Sederberg, PhD
 documentclass: scrartcl
-date: Version 2020-08-27
+date: Version 2020-09-15
 header-includes:
     - \usepackage{array,hyperref}
     - \usepackage[letterpaper, margin=1in]{geometry}
@@ -45,7 +45,7 @@ Lab Website:
 :    Computational Memory Lab (https://compmem.org)
 
 Office hours:
-:    TBA
+:    Tuesday, 14:30--15:00 and Wednesday, 13:30--14:00
 
 Final:
 :    Project-based
