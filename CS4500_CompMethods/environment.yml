@@ -1,0 +1,9 @@
+name: compsy
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - seaborn

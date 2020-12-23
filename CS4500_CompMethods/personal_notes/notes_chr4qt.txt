@@ -1,0 +1,389 @@
+--9/10 Lecture
+
+    --General Refresher
+        --Can multiply string by number to print that string x number times. 
+        --Modulo gives you the remainder. 
+        --Use an "if var.isdigit(): " to determine if the input is an integer
+        --Remember to +1 to include the final number in the list because it's not inclusive
+        --Put the input inside the function
+    --Lists
+        --Remember that lists use [], and lists times number gives the list that number of times
+        --Use index to change object in list. list[0] = 'new input'
+        --list[3:] starts at index 3. l[:3] goes until index 3 noninclusive. l[::2] starts at 0 and returns every 2nd value. 
+        --list.append('string') adds an individual item
+        --list.extend(var) can add the full list stored for var to the end
+        --can also just use += ['item']. If you assign as a different variable + is still only concatenation. 
+        --pure list assignments a=b change both. Copies made using c=a[:]
+        --can determine what some functions do using r.*tab*?
+    --Tuples are just immutable lists that use ()
+        --min(r) and max(r) return the alphanumerical placement of the letter with " " at 0
+        --Starting a function with * returns arguments as a tuple
+            --test(*arguments):
+                --print(arguments)
+            --printall(1, 2.0, 'seven') gives a tuple of those 3. 
+        --Can return sequences as a zipped tuple by pairing indices in sequences
+            --s = 'xyz'
+            --t = [4,5,6]
+            --test = zip(s,t)   # This does the pairing, zip will stop at earliest point in either list
+            --Would print things like (x,4) or (z,6)
+    --Dictionaries (Dict), which relies on keys
+        --Best practice is to use tuples, NOT lists because you don't want to switch up the key
+        --Values can be mutable tho.
+        --Make new dict. dict_name = {
+                                  'first': 1,
+                                  'second': 2, 
+                                  }
+        --Change/Add keyval pair: dict_name[key_name] = ''
+        --Mutability of dictionaries help easily create histograms (last example on slide)
+
+
+
+
+--9/17 Lecture
+
+    --Overview of what we'll go over
+        --What are modules in Python
+        --What is 'namespace' and 'variable scope'
+        --Import modules and libraries
+        --Create N-dimensional arrays
+        --Index values in the arrays
+        --Perform operations on the arrays
+    --Modules
+        --Files that have a collection of related fxns (Python has hundreds in Python Standard Library). Can make new ones
+            --In psych and neuro, frwquently create new or modify existing modules to fit experiments. 
+        --First need to import it into your namespace and then make use of it
+            --If want to use trig, (import math) and make sure to convert to Rads. 
+            --(math.pi) is a constant value
+                --rememebr (math.*tab*) will show you which ones you can use
+            --(from module_name import *fxn*) can bring functions in but would override variables that have the same name keeping the one that comes later. Easier to do (math.fxn)
+    --Libraries
+        --These are larger collections of modules
+        --(numpy), (scipy), and (matplotlib)
+            --The first two essentially give you matlab
+    --(Numpy)
+        --Overview
+            --Open source extension package for multidimmesional arrays            
+            --Gives interface to low level highly optimized libraries for numbers
+            --Designed for scientists 
+            --Has arrays which contain
+                --Discrete time of experiment/situation
+                --signal recorded by measuring device
+                --pixels
+        --Basics
+            --Main object is the homogenous array
+            --Table of elements {probs numbers} of same time indexed by tuple of numbers
+            --Dimensions are "axes" and number of axes are "rank"
+            --Coordinates of a point in 3D space [1, 2, 1]:
+                --Is an array of rank 1, because it has one axis.
+                --That axis has a length of 3.
+        --Making arrays
+            --Recast list as an array {(a = np.array([0,1,2,3]))}
+            --Calling (*array*.len) returns the number of axes {rows}
+            --Using (a = np.arange(10)) to make an array from 1-8 {NON-INCLUSIVE}
+            --Can also chose lower and upper bounds to divide evenly
+                --(c = np.linspace(0,1, 6))
+                --(c = np.linspace(0,1, 5, endpoint = False)) gives the same split but doesn't include the last point. 
+            --A 3 by 3 matrix with values all == 1
+                --(a = np.ones((3, 3)))  # reminder: (3, 3) is a tuple
+            --A 2 by 2 matrix with values all == 0
+                --(b = np.zeros((2, 2)))
+            --A matrix that's 3 by 3 with values == 1 along the diagonal
+                --(c = np.eye(3))
+            --Mersenne Twisters generate pseudo random numbers
+                --(a = np.random.rand(4))
+            --Using the code below gives you random yet repeatable numbers
+                --(np.random.seed(12345))
+                --(print(np.random.rand(3)))
+        --Data types
+            --Integers run faster than floats, but float is default type
+            --Can index in arrays also
+            --To replace, use index to alter
+                --a[:, 2] = 10 makes all rows at column 2 equal to 10
+        --Elementwise operations
+            --Just use *numpy_var* *operation* *value*
+                --(a = np.array([1, 2, 3, 4]))
+                --(a + 1)
+            --For Multiplication, CANNOT use c * c to do matrix multiplication
+                --Needs to be c @ c
+            --Comparative operations can be used to see if each element follows
+                --(a == b) sees if each point is equal to the respective in the other
+            --Logical operations also run elementwise
+                --For "and", "or", and "not" operations, need to use "&", "|", and "~"
+        --Linear Algebra
+            --Can create triangles in the matrices
+            --Can use (a.T) to transpose the matrix by flipping rows and columns
+        --Reducing Arrays
+            --Can use (np.sum(x)) or x.sum to get sum 
+
+
+
+
+--9/24 Lecture
+    --Read & Write basic Text files
+        --Reading from files
+            --Open files in the same directory using (f = open('file_name.txt', 'r') 
+                --{'r' is for read, 'w' is for write, 'a' is for append}
+            --To read one line in use (line = f.readline())
+            --MAKE SURE TO (f.close()) WHEN DONE
+        --Parsing the numbers turns big string into a list of numbers
+            --Use (line.strip()) to pull off the new line entry at the end of each line
+            --Use (line.split()) to make each val a new entry in a list
+                --Can specifiy where to split using (''), (' '), (',') etc.
+                --Needs to be run after line.strip
+            --To turn a list from string to numbers, can embed for loop into list trrough list comprehension
+                --(ints = [int(s) for s in line.strip().split(' ')])
+                --List comprehensions are significantly faster than for loops.
+            --Can then sort the numbers WITHIN THE SAME LIST using sort
+                --(ints.sort())
+                --Can sort in descending order using (ints.sort(reverse=True))
+        --Writing the file back out
+            --Use (f.write()) to file. Can format text with options LOOK INTO THEM
+            --Use Random Generators to write using a random fashion
+                --(random.shuffle(ints)) is very useful to randomize lists IN PLACE
+    --Read and write CSV files {comma separated values}
+        --Typical in research which is why it led to module creation; essentially a spreadsheet
+        --Classes (csv.DictReader(open('exp_res.csv', 'r'))) helps readily sort created ditionaries
+        --May not use this a lot since Pandas is also very useful for what we'll do
+    --Pickling objects
+        --Dump an object to file for some future use; allows to serialize Python objects
+            --Turns them into a byte stream
+            --Doesn't produce human readable content, i.e. writes out as binary
+            --Use (d2 = pickle.load(open('my_dict.pickle','rb')) to read the binary txt
+        --Special things to note
+            --Are not portable across languages, usually meant for personal storage
+    --Fundamentals of Expt. design
+    --Link btwn Science and Coding
+        --The human brain is a very complex function; the goal is to change parameters and see what happens 
+    --Depend. vs Independ. vars
+        --The IV are our inputs, the DV are our outputs. Standard
+            --Parameters/input, return/print, assignments. 
+    --Constraints on how to structure lists
+    --How to make simple list of dicts. to define a trial
+    
+    
+    
+    
+--10/1
+    --ListGen Assignment
+        --Goal is to generate the lists that will be presented to subjects to collect responses
+        --Hold information that will be presented inside its own dictionary
+            --Try to include as much info as possible {Stim, type, cond, novelty}
+                --Novelty means is it target or lure
+            --For each trial, there is one dictionary. Then all trials are in a mega list
+            --The mega list is the key within AN EVEN LARGER dictionary for study or test
+            --Study and test dictionaries are held in the ULTIMATE list
+            --Lures must be of the same condition as the study material 
+        --Each ULTIMATE block should have 2 LARGER dictionaries ()
+    --Define Hierarchical State Machine
+        --State Machine Interface Library for Experiments AKA SMILE
+            --Goal in develpment was: 
+                --to have easy and hard takes simple with millisecond accuracy 
+                --write expts that run cross-platform 
+                --log everything for repetetive cases. 
+            --Requires Kivy download {Look at code to install}
+                --Cross-platform python application development library
+                    --Means you can use Python code-base to deploy app to iOS, Windows, etc.
+                --All core librares are compiled to C code, making it very fast
+                --Built on OpenGL which results in powerful graphics
+        --What is a State Machine in general?
+            --Really focused on fintate state machine since not unlimited
+            --Common way of modeling systems all over
+            --Often represented by a directed graph with nodes as states and edges as transitions
+                --Better understood as a stoplight wehre you progress when condition met
+            --Powerful extension of a base state machine is to make it hierarchical {HSM}
+                --Just means states cane be entire finite state machins
+                --HSM can represent almost any computer program
+                    --Most computer games are just complex HSMs 
+                    --In that state doing something until hit achievement, then go into next connected state
+            --Smile helps you build these Sttae machines
+    --Difference between build-time and run-time in SMILE
+        --The building of the exp and the running of it are two DISTINCT features. 
+        --Building/build-times
+            --When building states, durations are important
+                --If you don't add one, can go on forever unless have conditional break
+            --Calls to the SMILE states construct the state machine
+            --Acutal values in Python variables will not be available yet
+            --Can't evaluate python variables until later so you use references to allow for the evalueation
+        --Running/run-times
+            --Occurs once you hit (exp.run())
+                --Will not run the experiment code again
+            --Don't want to run in the file with code to avoid mistakes
+                --Use (python exp name.py -s subj001)
+                    -- (-s) opens up full screens for tests, (-f) turns off full screen
+            --State machine is initialized at the first state and runs to completion
+            --Does NOT run code in script, just jumps from state machine to state machine
+    --Difference between Action and Flow states in SMILE
+        --Action States
+            --Carry out some specific input or outpur operation and often have a duration
+            --Examples include:
+                --(Image): presentes image on screen
+                --(Label): Places text on screen
+                --(KeyPress): Accepts user input
+                --(MovingDot): Presents moving dot stimulus on screen
+                --({Shapename}): Can present that shape on the screen 
+        --Flow States
+            --Control the order of operations for the action states, rare duration
+                --Determine how the action state is carried out
+                --In a diagram, these are the lines between the bubbles
+                --Examples include:
+                    --(Parallel) and (Serial): Controll sequences of states
+                        --Simultaneous or Sequential respectively
+                    --(If), (Elif), (Else): Conditioning
+                    --(Meanwhile), (UntilDone): Run states while other states run
+                        --To make a block, need to use (with __)
+                        --To affect the one above on a done use (with UntilDone():)
+    --How to build simple experiments in SMILE
+        --For keyboard responses using (kp = KeyPress()), set a (resp_keys)
+            --Common ones include "f" or "j"
+            --Input as (['F', 'J']), then do KeyPress(keys=resp_keys)
+            --Default for escaping an experiment is (SHIFT + Esc)
+        --For wait durations can add uniformed randomization
+            --Use (jitter) under wait
+        --(Loop()) can take in either a number or a list
+        --All of the SMILE states secretely log time stamps. 
+        
+        
+        
+        
+--10/8 
+    --General Updates
+        --The goal is to be able to step away from the general experimental set ups
+            --Create any expt you can think of
+         --Recap, SMILE is making a Hierarchical State system that uses flow of data points
+            --All expts end up being a directed acyclic graph
+            --This is a controlled library so it is often altered/improved/modified
+            --One beginning and one end, can trace through the family tree to get A->B
+    --How to update SMILE to the latest version
+        --Use install line to see if there is a new version of Kivy
+            --(conda install -c conda-forge kivy)
+        --Update SMILE from github repository
+            --(pip install git+https://github.com/compmem/smile --upgrade)
+            --Use the front chunk to install but (--upgrade) makes sure using latest version.
+        --Understanding Flow
+            --Default in SMILE is to proceed sequentially AKA in serial
+                --(Serial) Parent state begins when some other thing ends
+            --(Parallel) state runs everything at the same time and ends it together
+                --Children at starting line and says run. All finished when last one done
+                --Can bypass the lagging 'runner' by using (blocking)
+                --(UntilDone) and (Meanwhile) are really elaborate blocking styles
+                    --(UntilDone) Can establish a condition and change when receive input
+                    --(Meanwhile) Establish desire for input and hold condition until met
+                        --Seem a little more organized personally
+                    --For parents, always using (with)
+                        --Still need parents to join
+                    --Placement is important, needs to be the parent RIGHT ABOVE
+                        --Can be separated by physical lines but any additional not states 
+            --Important note!!!
+                --When a SMILE crashes, you need to reset the whole kernel
+    --How to present images
+        --Uses a visual state to present images
+            --(Image(source='.jpg'))
+        --Default is to present everything at the center of the screen, maintaining pixels
+            --When want to change size, use (, allow_stretch=True)
+            --To allow for distortion in size change (, keep_ratio=False)
+    --To visualize the DAG for an experiment
+        --Use dag to give a visual layout of what your code is doing
+            --(
+                from smile.dag import DAG
+                d = DAG(exp)
+                d.view_png()
+                )
+    --How to lay out visual states on the screen
+        --Can place them relative to the screen {0,0 in bottom left} OR to other states
+        --Space relative to standard black screen is
+            --(exp = Experiment(show_splash=False, resolution=(1024,768)))
+            --(im_name = Image(source="", left=exp.screen.center_x - var)
+        --Can set up visual states to do natural movements for some duration
+    --How to include mouse interaction
+        --Mouse dissapears by default, can readd using (MouseCursor()) in (Parallel)
+        --Track position of mouse for cognitive analysis using:
+            --(mrec = Record(mouse_pos=MousePos()))
+            -- Remember (|) means "or"
+            --Can then create Debug states to make keyword arguments that print at screen
+        --For animations, can link the spatial properties of visual spaces with other things
+            --Typical is mouse position
+    --To log information for easy analysis
+        --SMILE states automatically log themselves, meaning you rarely lose info
+            --Every single state logs what it does but it's a pain to find and sort
+        --More manageable to analyze well-organized log file from your own expt. 
+            --Make a list of Key/Value pairs that might be interesting
+    --How to write subroutines to organize your code
+        --One of most powerful tools for long code is function
+            --Mimic the expression of functions using (Subroutine) decorator
+            --Decorator is just (@Subroutine) and turns fxn into subroutine
+        --Must define at start and have first parameter be 'self'
+            --(def MyTrial(self, text):)
+    --Elaborating using tests
+        --Make sure not to take unputs until the stimuli are up
+            --Do this using (Wait(until=stim.appear_time)
+            --Use (Log()) to create the trial
+        --There are instances where it's ideal to an domize location (like in flanker)
+        --Rememebr that Jitter takes a starting value and then goes up to the second val
+        --Going to want nested loops but start off with just presenting the stimuli
+        --Using Sliding techniques, can pair responses with a block to make it gauge confidence
+     --For the DAG portion of the assignment, do conda install pydot
+
+
+--10/15
+--
+--
+--
+--
+
+
+
+
+--22
+--
+--
+--
+--
+
+
+
+
+--29
+--
+--
+--
+--
+
+
+
+
+--5
+--
+--
+--
+--
+
+
+
+
+--12
+--
+--
+--
+--
+
+
+
+
+--19
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
