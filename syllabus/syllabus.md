@@ -1,9 +1,9 @@
 ---
-title: 'Computational Methods in Psychology and Neuroscience'
-subtitle: 'Psychology 4500 --- Fall 2020'
+title: 'RM: Computational Methods in Psychology and Neuroscience'
+subtitle: 'Psychology 4215/7215 --- Fall 2021'
 author: Per B. Sederberg, PhD
 documentclass: scrartcl
-date: Version 2020-08-25
+date: Version 2021-08-25
 header-includes:
     - \usepackage{array,hyperref}
     - \usepackage[letterpaper, margin=1in]{geometry}
@@ -15,13 +15,13 @@ header-includes:
 # Quick Reference
 
 Credit:
-:    3 units ; Class # 18865
+:    3 units
 
 Time:
 :    Thursday, 14:00 -- 16:30
 
 Place:
-:    Online
+:    Dell 2, rm. 101
 
 Text:
 :    Assigned readings
@@ -30,7 +30,7 @@ Course Web Page:
 :    GitHub (https://github.com/compmem/compsy)
 
 Course assistants:
-:    Ryan Kirkpatrick (and CompMem lab members)
+:    Adam Fenton (and CompMem lab members)
 
 Instructor:
 :    Dr. Per Sederberg
@@ -45,7 +45,7 @@ Lab Website:
 :    Computational Memory Lab (https://compmem.org)
 
 Office hours:
-:    TBA
+:    TBA (Online)
 
 Final:
 :    Project-based
@@ -58,20 +58,10 @@ In the late 1800s, Hermann Ebbinghaus and Georg Elias Müller were busy launchin
 
 Science is hard.  We need as many tools as possible at our disposal to make our job easier.  These days computers play an integral role in our scientific workflow and psychologists typically rely on a limited number of large-scale software packages to assist at each stage of this process (e.g., EPrime, Microsoft Excel, SPSS and, if we're willing to branch out into the land of programming, Matlab or R).  This course is designed to break the fetters of commercial, and often inflexible, applications with the power of computer programming. With no assumptions of prior programming experience, we focus on the Python language and specifically on how it can help with *every* stage of our scientific workflow in Psychology and Neuroscience.  The goal is that you will gain a better understanding of how a computer works (and can work for you), improve how you solve problems, and optimize and speed up your workflow, but, most importantly, that you will lessen the need to tailor your research questions based on the status quo.
 
-# Online Course Expectations
-
-This course will be taking place entirely online with "synchronous" classes on Zoom. As much as possible, I hope we can make this feel like we are all in this together, meeting in the same room. As such, these are the primary guidelines and expectations for our Zoom meetings:
-
-- You should keep your video on unless a transient issue arises (e.g., there is something seriously distracting going on in the room.) 
-- You can, however, keep your microphone muted when not talking.
-- Feel free to ask questions anytime! It's often hard for me to see everyone, so interjecting by voice is perfectly fine (i.e., you don't need to use the hand-raising feature in the Zoom chat.)
-- We will be recording the lessons, which will be made available *only* to those in the class via UVACollab. 
-
-If you have any concerns about any of these policies, please set up a meeting with me and I will do my best to accommodate your needs.
 
 # Resources
 
-The two main sources for lesson materials are:
+The main sources for lesson materials at the start of the course are:
 
 - Downey, Allen (2016). Think Python: How to think like a computer scientist (2nd Edition). 
   Needham, MA: Green Tea Press. 
@@ -102,14 +92,14 @@ I am eager for you to get as much as possible from this course, so please feel f
 The following is the general order of the topics covered in the course. Please note that sometimes we may cover multiple topics in a single lecture, or spend more than one lecture on a single topic, and this list is subject to modification at any time. That said, all major changes will also include an update to the syllabus, so it will remain a point of reference.
 
 0. Intro and Ecosystem setup
-1. Version control with git
-2. Python programming
-3. Experiment design and implementation
-4. Data collection and processing
-5. Data visualization
-6. Data analysis and statistics
-7. Presentations
-8. Advanced topics
+1. Python programming
+2. Experiment design and implementation
+3. Data collection and processing
+4. Data visualization
+5. Data analysis and statistics
+6. Repeat 2 through 5 for various topics: Attention, Perception, Working Memory, Long-term memory, Decision-making
+7. Neural data analysis
+8. Advanced topics (e.g., machine learning, computational modeling, etc...)
 
 Lectures, in the form of Jupyter Notebooks, will typically be posted the day of class, so you can follow along. Assignments, from smaller exercises to larger projects (see below), will be assigned in class with clear due dates spread throughout the semester.
 
@@ -119,11 +109,22 @@ Lectures, in the form of Jupyter Notebooks, will typically be posted the day of 
 This is a upper-level course, which means that much of the burden of staying motivated to learn is transferred to the student. As such, there will not be any in-class exams. Students will be evaluated on the basis of:
 
 - Lesson exercises / class participation (30 pts)
-- List generation project (20 pts)
-- Experiment project (20 pts)
-- Data Analysis project (30 pts)
+- List generation project (10 pts)
+- Experiment project (10 pts)
+- Experiment labs (30 pts)
+- Final project (20 pts)
 
-for a total of 100 points. The course will be graded using the standard grading scale.
+for a total of 100 points.
+
+Graduate students will have the following additional course requirements:
+
+- Experiment motivation and design document (10 pts)
+- Final write-up with results and discussion (20 pts)
+
+for a total of 30 additional points.
+
+The course will be graded using the standard grading scale with your percentage of points earned out of the total possible points rounding to the nearest whole percentage point.
+
 
 
 
