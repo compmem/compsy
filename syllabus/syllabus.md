@@ -3,7 +3,7 @@ title: 'RM: Computational Methods in Psychology and Neuroscience'
 subtitle: 'Psychology 4215/7215 --- Fall 2023'
 author: Per B. Sederberg, PhD
 documentclass: scrartcl
-date: Version 2023-08-24
+date: Version 2023-09-18
 header-includes:
     - \usepackage{array,hyperref}
     - \usepackage[letterpaper, margin=1in]{geometry}
@@ -45,7 +45,7 @@ Lab Website:
 :    Computational Memory Lab (https://compmem.org)
 
 Office hours:
-:    TBA
+:    Monday, 13:30--14:00 and Tuesday, 14:00--14:30, or by appointment
 
 Final:
 :    Project-based
