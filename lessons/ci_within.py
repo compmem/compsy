@@ -33,6 +33,9 @@ def ci_within(df, indexvar, withinvars, measvar, confint=0.95,
     if copy:
         df = df.copy()
 
+    # make sure to cast the measure var to float
+    df[measvar] = df[measvar].astype(float)
+
     # Apply Cousinaueu's method:
     # compute grand mean
     mean_ = df[measvar].mean()
@@ -54,7 +57,7 @@ def ci_within(df, indexvar, withinvars, measvar, confint=0.95,
         se = sem(x)
         return se * stats.t.interval(confint, len(x - 1))[1]
 
-    aggfuncs = [np.mean, np.std, sem, ci, len]
+    aggfuncs = ["mean", "std", sem, ci, len]
     out = df.groupby(withinvars)[measvar].agg(aggfuncs)
 
     # compute & apply correction factor
